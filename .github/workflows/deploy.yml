@@ -1,0 +1,57 @@
+name: Deploy docs to Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  # Release data (download page, changelog) is baked in at build time —
+  # rebuild on a schedule so new app releases show up without a site commit.
+  schedule:
+    - cron: '17 */6 * * *'
+  # Fired by the app repo's release workflow for an immediate refresh.
+  repository_dispatch:
+    types: [app-release]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment; don't cancel an in-progress run.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Build
+        run: pnpm build
+        env:
+          # Used for sitemap + OpenGraph absolute URLs.
+          VITE_HOSTNAME: https://tsumiru.app
+          # Release lookups are rate-limited to 60/hour without it.
+          GITHUB_TOKEN: ${{ github.token }}
+      - uses: actions/configure-pages@v6
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          # vitepress outDir is ../dist (repo root) relative to src.
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5
