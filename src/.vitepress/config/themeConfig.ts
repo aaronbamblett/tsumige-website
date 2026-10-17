@@ -4,6 +4,12 @@ import nav from './navigation/navbar'
 import sidebar from './navigation/sidebar'
 
 const themeConfig: DefaultTheme.Config = {
+  logo: {
+    src: '/img/logo-128px.png',
+    width: 24,
+    height: 24,
+  },
+
   nav,
   sidebar,
 
