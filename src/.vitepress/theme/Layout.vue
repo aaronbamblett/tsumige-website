@@ -27,9 +27,10 @@ provide('toggle-appearance', () => {
 
 <style scoped>
 .hero-shot {
+  position: relative;
+  z-index: 1;
   display: block;
-  width: 640px;
-  max-width: 100%;
+  width: min(640px, 100%);
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 0 30px 80px -10px rgba(155, 123, 255, 0.3);
@@ -45,6 +46,21 @@ provide('toggle-appearance', () => {
 <!-- Non-scoped: tame VitePress's mobile hero negative margins so the stacked
      screenshot keeps a clean gap below the text. -->
 <style>
+@media (min-width: 960px) {
+  .VPHero.has-image .main {
+    max-width: 560px;
+  }
+
+  .VPHero.has-image .image {
+    padding-left: 32px;
+    box-sizing: border-box;
+  }
+
+  .VPHero.has-image .image-container {
+    transform: translate(0, -32px);
+  }
+}
+
 @media (max-width: 959px) {
   .VPHero .image {
     margin: 0 auto 2rem;
