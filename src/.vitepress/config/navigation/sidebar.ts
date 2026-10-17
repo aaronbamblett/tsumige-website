@@ -18,10 +18,6 @@ function defaultSidebar(): DefaultTheme.SidebarItem[] {
           text: 'Changelogs',
           link: '/changelogs/',
         },
-        {
-          text: 'Compare readers',
-          link: '/docs/compare/',
-        },
       ],
     },
     {
@@ -32,86 +28,35 @@ function defaultSidebar(): DefaultTheme.SidebarItem[] {
           link: '/docs/guides/getting-started',
         },
         {
-          text: 'Coming from Mihon or Komikku',
-          link: '/docs/guides/migrate-from-mihon',
+          text: 'Adding games',
+          link: '/docs/guides/adding-games',
         },
         {
-          text: 'Install on iOS (sideloading)',
-          link: '/docs/guides/install-ios',
+          text: 'Folder import',
+          link: '/docs/guides/folder-import',
         },
         {
-          text: 'Browse: sources & extensions',
-          link: '/docs/guides/browse-and-extensions',
+          text: 'Launch settings',
+          link: '/docs/guides/launch-settings',
         },
         {
-          text: 'Extension stores',
-          link: '/docs/guides/adding-sources',
+          text: 'Cover art',
+          link: '/docs/guides/cover-art',
         },
         {
-          text: 'Reader settings',
-          link: '/docs/guides/reader-settings',
+          text: 'Playtime',
+          link: '/docs/guides/playtime',
         },
-        {
-          text: 'Keyboard shortcuts',
-          link: '/docs/guides/keyboard-shortcuts',
-        },
-        {
-          text: 'Reaching your server from anywhere',
-          link: '/docs/guides/remote-access',
-        },
-        {
-          text: 'Offline reading',
-          link: '/docs/guides/offline-reading',
-        },
-        {
-          text: 'Notifications',
-          link: '/docs/guides/notifications',
-        },
-        { text: 'Categories', link: '/docs/guides/categories' },
-        { text: 'Tracking', link: '/docs/guides/tracking' },
-        { text: 'Migrate manga between sources', link: '/docs/guides/source-migration' },
-        { text: 'Backups', link: '/docs/guides/backups' },
         {
           text: 'Troubleshooting',
-          link: '/docs/guides/troubleshooting/',
-          collapsed: true,
-          items: [
-            {
-              text: 'Common issues',
-              link: '/docs/guides/troubleshooting/common-issues',
-            },
-            {
-              text: 'Diagnosis',
-              link: '/docs/guides/troubleshooting/diagnosis',
-            },
-          ],
+          link: '/docs/guides/troubleshooting',
         },
       ],
     },
     {
       text: 'Frequently Asked Questions',
       items: [
-        { text: 'General', link: '/docs/faq/general' },
-        {
-          text: 'Library',
-          link: '/docs/faq/library',
-        },
-        {
-          text: 'Reader',
-          link: '/docs/faq/reader',
-        },
-        {
-          text: 'Downloads',
-          link: '/docs/faq/downloads',
-        },
-        {
-          text: 'Settings',
-          link: '/docs/faq/settings',
-        },
-        {
-          text: 'Storage',
-          link: '/docs/faq/storage',
-        },
+        { text: 'FAQ', link: '/docs/faq/' },
       ],
     },
   ]

@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
-  # Release data (download page, changelog) is baked in at build time —
+  # Release data (changelog pages, navbar version) is baked in at build time;
   # rebuild on a schedule so new app releases show up without a site commit.
   schedule:
     - cron: '17 */6 * * *'
@@ -37,7 +37,7 @@ jobs:
         run: pnpm build
         env:
           # Used for sitemap + OpenGraph absolute URLs.
-          VITE_HOSTNAME: https://tsumiru.app
+          VITE_HOSTNAME: https://tsumige.app
           # Release lookups are rate-limited to 60/hour without it.
           GITHUB_TOKEN: ${{ github.token }}
       - uses: actions/configure-pages@v6

@@ -2,6 +2,7 @@ import type { ContentData, SiteConfig } from 'vitepress'
 import type { SatoriOptions } from 'x-satori/vue'
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { dirname, resolve } from 'node:path'
+import process from 'node:process'
 import { fileURLToPath } from 'node:url'
 import { Octokit } from '@octokit/rest'
 import { renderAsync } from '@resvg/resvg-js'
@@ -106,11 +107,20 @@ async function generateOgImages(config: SiteConfig) {
 
   // Generate OG images for dynamic changelog pages
   const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN })
-  const releases = await octokit.paginate(octokit.repos.listReleases, {
-    owner: 'Suwayomi',
-    repo: 'Suwayomi-Tsumiru',
-    per_page: 100,
-  })
+  let releases
+  try {
+    releases = await octokit.paginate(octokit.repos.listReleases, {
+      owner: 'aaronbamblett',
+      repo: 'tsumige',
+      per_page: 100,
+    })
+  }
+  catch (error) {
+    // 404 until the repo exists and has releases.
+    if ((error as { status?: number }).status !== 404)
+      throw error
+    releases = []
+  }
 
   for (const r of releases) {
     if (!r.tag_name)
@@ -119,7 +129,7 @@ async function generateOgImages(config: SiteConfig) {
       url: `/changelogs/${r.tag_name}`,
       frontmatter: {
         // Prefer release name; fallback to tag
-        title: r.name || `Tsumiru ${r.tag_name.substring(1)}`,
+        title: r.name || `Tsumige ${r.tag_name.substring(1)}`,
         description: extractChangelogSnippet(r.body),
       } as any,
     }
@@ -147,8 +157,6 @@ function getDir(url: string) {
     return 'FAQ'
   else if (url.startsWith('/docs/guides/'))
     return 'Guide'
-  else if (url.startsWith('/news/') && url !== '/news/')
-    return 'News'
   else if (url.startsWith('/changelogs/'))
     return 'Changelog'
 

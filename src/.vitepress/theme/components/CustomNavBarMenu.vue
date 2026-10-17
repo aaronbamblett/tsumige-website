@@ -29,7 +29,10 @@ const nav = computed(() => {
     if (!item.text.includes('{app_version}'))
       return item
 
-    const appVersion = release.stable.tag_name.substring(1)
+    if (!release)
+      return { ...item, text: 'Download' } satisfies DefaultTheme.NavItem
+
+    const appVersion = release.tag_name.substring(1)
 
     return {
       ...item,

@@ -7,11 +7,7 @@ import Contributors from './Contributors.vue'
 const md = new MarkdownIt({ html: true })
 
 function renderMarkdown(string: string | null | undefined) {
-  const pre = (string ?? '').replace(
-    'Check out the [past release notes](https://github.com/Suwayomi/Suwayomi-Tsumiru/releases) if you’re upgrading from an earlier version. ',
-    '',
-  ).replace(/^Check out the .*past release notes.* if you're.*$/m, '')
-  return formatChangelog(md, pre, { stripChecksums: true })
+  return formatChangelog(md, string, { stripChecksums: true })
 }
 
 const dateFormatter = new Intl.DateTimeFormat('en', {
@@ -20,6 +16,9 @@ const dateFormatter = new Intl.DateTimeFormat('en', {
 </script>
 
 <template>
+  <p v-if="changelogs.length === 0">
+    No releases yet.
+  </p>
   <div
     v-for="(release, index) of changelogs"
     :key="release.tag_name"
@@ -44,7 +43,6 @@ const dateFormatter = new Intl.DateTimeFormat('en', {
     <Contributors
       :body="release.body!"
       :author="release.author.login"
-      :tag="release.tag_name"
     />
   </div>
 </template>

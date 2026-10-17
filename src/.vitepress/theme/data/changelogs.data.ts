@@ -1,4 +1,5 @@
 import type { GetResponseDataTypeFromEndpointMethod } from '@octokit/types'
+import process from 'node:process'
 import { Octokit } from '@octokit/rest'
 import { defineLoader } from 'vitepress'
 
@@ -11,12 +12,18 @@ export { data }
 
 export default defineLoader({
   async load(): Promise<GitHubReleaseList> {
-    const releases = await octokit.paginate(octokit.repos.listReleases, {
-      owner: 'Suwayomi',
-      repo: 'Suwayomi-Tsumiru',
-      per_page: 100,
-    })
-
-    return releases
+    try {
+      return await octokit.paginate(octokit.repos.listReleases, {
+        owner: 'aaronbamblett',
+        repo: 'tsumige',
+        per_page: 100,
+      })
+    }
+    catch (error) {
+      // 404 until the repo exists and has releases.
+      if ((error as { status?: number }).status === 404)
+        return []
+      throw error
+    }
   },
 })

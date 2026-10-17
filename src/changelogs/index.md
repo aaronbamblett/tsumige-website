@@ -1,6 +1,6 @@
 ---
 title: Changelogs
-description: Changelogs of all Tsumiru releases.
+description: Changelogs of all Tsumige releases.
 lastUpdated: false
 editLink: false
 prev: false
@@ -13,6 +13,6 @@ import ChangelogsList from "@theme/components/ChangelogsList.vue";
 
 # Changelogs
 
-Changelogs of all Tsumiru releases, which are also available [on GitHub](https://github.com/Suwayomi/Suwayomi-Tsumiru/releases).
+Changelogs of all Tsumige releases, which are also available [on GitHub](https://github.com/aaronbamblett/tsumige/releases).
 
 <ChangelogsList />

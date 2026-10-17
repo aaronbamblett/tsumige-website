@@ -7,17 +7,10 @@ import { defineConfig, loadEnv } from 'vitepress'
 // Theme related config
 import headConfig from './config/headConfig'
 
-// Publishes the AltStore / SideStore source
-import generateAltStoreSource from './config/hooks/generateAltStoreSource'
-
 // Enhanced meta generation
-import generateFeed from './config/hooks/generateFeed'
-
 import generateMeta from './config/hooks/generateMeta'
 
 // Provides how to generate Meta head tags
-
-// Allows generation of RSS feed
 import generateOgImages from './config/hooks/generateOgImages'
 
 import markdownConfig from './config/markdownConfig'
@@ -28,8 +21,8 @@ import themeConfig from './config/themeConfig'
 const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN })
 const releaseDateCache = new Map<string, string>()
 
-const title = 'Tsumiru'
-const description = 'A manga and manhwa reader for your own Suwayomi server. Built for offline and webtoon reading on Android, iOS, desktop, and the web.'
+const title = 'Tsumige'
+const description = 'Add a game and Tsumige downloads its cover art, description, tags and rating from VNDB. Then it launches the game with the right settings and logs your playtime.'
 
 const env = loadEnv('', process.cwd())
 const hostname: string = env.VITE_HOSTNAME || 'http://localhost:4173'
@@ -38,14 +31,12 @@ export default defineConfig({
   outDir: '../dist',
   lastUpdated: true,
   cleanUrls: true,
-  // "Indigo Night" is a dark brand — default to dark, but keep the toggle.
+  // Royal is a dark brand: default to dark, but keep the toggle.
   appearance: 'dark',
   title,
   description,
   sitemap: {
     hostname,
-    // Sandbox is noindexed; keep it out of the sitemap so signals agree.
-    transformItems: items => items.filter(i => !i.url.includes('sandbox')),
   },
   head: headConfig,
   markdown: markdownConfig,
@@ -61,7 +52,7 @@ export default defineConfig({
         let publishedAt = releaseDateCache.get(tag)
         if (!publishedAt) {
           try {
-            const { data } = await octokit.repos.getReleaseByTag({ owner: 'Suwayomi', repo: 'Suwayomi-Tsumiru', tag })
+            const { data } = await octokit.repos.getReleaseByTag({ owner: 'aaronbamblett', repo: 'tsumige', tag })
             publishedAt = data.published_at || data.created_at || ''
             if (publishedAt)
               releaseDateCache.set(tag, publishedAt)
@@ -75,8 +66,8 @@ export default defineConfig({
 
         const versionLabel = tag
         const desc = prettyDate
-          ? `Changelog for Tsumiru ${versionLabel}, released on ${prettyDate}`
-          : `Changelog for Tsumiru ${versionLabel}`
+          ? `Changelog for Tsumige ${versionLabel}, released on ${prettyDate}`
+          : `Changelog for Tsumige ${versionLabel}`
 
         pageData.frontmatter.description = pageData.frontmatter.description || desc
         pageData.title = pageData.frontmatter.title
@@ -87,9 +78,7 @@ export default defineConfig({
   },
   transformHead: async context => generateMeta(context, hostname),
   buildEnd: async (context) => {
-    generateFeed(context, hostname)
-    generateOgImages(context)
-    await generateAltStoreSource(context, hostname)
+    await generateOgImages(context)
   },
   vite: {
     resolve: {

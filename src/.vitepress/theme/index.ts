@@ -1,6 +1,4 @@
 // Import icon components
-import { IconBugReport, IconDownload, IconNewspaperVariant } from '@iconify-prerendered/vue-mdi'
-
 import { VueQueryPlugin } from '@tanstack/vue-query'
 
 import { enhanceAppWithTabs } from 'vitepress-plugin-tabs/client'
@@ -20,9 +18,6 @@ export default {
   enhanceApp({ app }) {
     app.use(VueQueryPlugin)
     enhanceAppWithTabs(app)
-    app.component('IconDownload', IconDownload)
-    app.component('IconNewspaperVariant', IconNewspaperVariant)
-    app.component('IconBugReport', IconBugReport)
   },
   Layout,
 }

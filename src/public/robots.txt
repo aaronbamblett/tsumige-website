@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /sandbox/
 
-Sitemap: https://tsumiru.app/sitemap.xml
+Sitemap: https://tsumige.app/sitemap.xml

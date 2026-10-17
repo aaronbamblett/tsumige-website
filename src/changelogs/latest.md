@@ -1,6 +1,6 @@
 ---
 title: Latest Changelog
-description: Changelog of the latest version of Tsumiru.
+description: Changelog of the latest version of Tsumige.
 outline: false
 lastUpdated: false
 editLink: false
@@ -17,8 +17,8 @@ onMounted(async () => {
   try {
     const octokit = new Octokit()
     const { data } = await octokit.repos.listReleases({
-      owner: 'Suwayomi',
-      repo: 'Suwayomi-Tsumiru',
+      owner: 'aaronbamblett',
+      repo: 'tsumige',
       per_page: 1,
     })
 

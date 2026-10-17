@@ -6,61 +6,91 @@
  * Colors
  * -------------------------------------------------------------------------- */
 
-// === Tsumiru "Indigo Night" — values are the SOURCE OF TRUTH from
-//     theme-kit/themes/indigo.css. Do not invent new hexes; mirror that file. ===
-$bg      = #0b0d1a   // --bg
-$bg2     = #11142a   // --bg2 (elevated panels, sidebar, cards, code)
-$ink     = #eef0fb   // --ink
-$muted   = #9aa0c4   // --muted
-$faint   = #6b7099   // --faint
-$accent  = #7c7bff   // --accent (indigo)
-$accent2 = #33d6ff   // --accent2 (cyan)
-$brd     = rgba(255, 255, 255, 0.08)  // --panel-brd
+// === Tsumige "Royal". Dark values come from theme-kit/themes/royal.css,
+//     light values from _royalLight in app/lib/src/utils/theme/theme_tokens.dart.
+//     Do not invent new hexes; mirror those files. ===
+$bg      = #0d0b16   // --bg
+$bg2     = #16122a   // --bg2 (elevated panels, sidebar, cards, code)
+$ink     = #f3eefb   // --ink
+$muted   = #b6abd0   // --muted
+$faint   = #7c719c   // --faint
+$accent  = #e8c468   // --accent (gold)
+$accent2 = #9b7bff   // --accent2 (violet)
+$on-accent = #0a0a12
+$brd     = rgba(255, 255, 255, 0.09)  // --panel-brd
+$success = #4be3a0
 $warning = #ffcf5c
 $danger  = #ff6b6b
-$info    = #2dd4bf
+
+$l-bg      = #f1ebf9
+$l-bg2     = #fffbff
+$l-ink     = #1c1a26
+$l-muted   = #605c6e
+$l-faint   = #837f8f
+$l-accent  = #5f45cc
+$l-accent2 = #8a6400
+$l-brd     = #dad5e3
+$l-accent-bg = #e7e0ff
+$l-grad-end  = #8e3fb8
 
 :root {
+  --vp-c-bg: $l-bg
+  --vp-c-bg-alt: $l-bg2
+  --vp-c-bg-elv: $l-bg2
+  --vp-c-bg-soft: $l-bg2
+  --vp-c-gutter: $l-brd
+
+  --vp-c-text-1: $l-ink
+  --vp-c-text-2: $l-muted
+  --vp-c-text-3: $l-faint
+
+  --vp-c-divider: $l-brd
+  --vp-c-border: $l-brd
+
   // Brand accent (light mode + fallback)
-  --vp-c-brand-1: $accent
-  --vp-c-brand-2: lighten($accent, 8%)
-  --vp-c-brand-3: $accent
-  --vp-c-brand-soft: rgba(124, 123, 255, 0.14)
+  --vp-c-brand-1: $l-accent
+  --vp-c-brand-2: lighten($l-accent, 8%)
+  --vp-c-brand-3: $l-accent
+  --vp-c-brand-soft: $l-accent-bg
   // Legacy aliases still read by some components
-  --vp-c-brand: $accent
-  --vp-c-brand-light: lighten($accent, 10%)
-  --vp-c-brand-lighter: lighten($accent, 20%)
-  --vp-c-brand-lightest: lighten($accent, 30%)
-  --vp-c-brand-dark: darken($accent, 10%)
-  --vp-c-brand-darker: darken($accent, 20%)
-  --vp-c-brand-dimm: rgba(124, 123, 255, 0.08)
+  --vp-c-brand: $l-accent
+  --vp-c-brand-light: lighten($l-accent, 10%)
+  --vp-c-brand-lighter: lighten($l-accent, 20%)
+  --vp-c-brand-lightest: lighten($l-accent, 30%)
+  --vp-c-brand-dark: darken($l-accent, 10%)
+  --vp-c-brand-darker: darken($l-accent, 20%)
+  --vp-c-brand-dimm: rgba(95, 69, 204, 0.08)
 
-  // Light surfaces, indigo-tinted (not plain grey)
-  --vp-c-bg: #fbfbff
-  --vp-c-bg-alt: #eef0fb
-  --vp-c-bg-elv: #ffffff
-  --vp-c-bg-soft: #f1f2fc
-
-  // Buttons (light)
-  --vp-button-brand-bg: $accent
-  --vp-button-brand-hover-bg: lighten($accent, 8%)
-  --vp-button-brand-active-bg: darken($accent, 8%)
+  // Buttons (light): gradient primary, tinted alt
+  --vp-button-brand-bg: $l-accent
+  --vp-button-brand-hover-bg: lighten($l-accent, 8%)
+  --vp-button-brand-active-bg: darken($l-accent, 8%)
   --vp-button-brand-border: transparent
   --vp-button-brand-hover-border: transparent
   --vp-button-brand-active-border: transparent
   --vp-button-brand-text: #ffffff
   --vp-button-brand-hover-text: #ffffff
   --vp-button-brand-active-text: #ffffff
+
+  --vp-button-alt-bg: rgba(95, 69, 204, 0.06)
+  --vp-button-alt-hover-bg: rgba(95, 69, 204, 0.12)
+  --vp-button-alt-active-bg: rgba(95, 69, 204, 0.16)
+  --vp-button-alt-border: $l-brd
+  --vp-button-alt-hover-border: rgba(95, 69, 204, 0.5)
+  --vp-button-alt-active-border: rgba(95, 69, 204, 0.6)
+  --vp-button-alt-text: $l-accent
+  --vp-button-alt-hover-text: $l-accent
+  --vp-button-alt-active-text: $l-accent
 }
 
-// === Indigo Night (dark) — the default appearance ===
+// === Royal (dark): the default appearance ===
 
 .dark {
   --vp-c-bg: $bg
   --vp-c-bg-alt: $bg2
   --vp-c-bg-elv: $bg2
   --vp-c-bg-soft: $bg2
-  --vp-c-gutter: #05060f
+  --vp-c-gutter: #07060d
 
   --vp-c-text-1: $ink
   --vp-c-text-2: $muted
@@ -72,28 +102,28 @@ $info    = #2dd4bf
   --vp-c-brand-1: $accent
   --vp-c-brand-2: lighten($accent, 10%)
   --vp-c-brand-3: $accent
-  --vp-c-brand-soft: rgba(124, 123, 255, 0.16)
+  --vp-c-brand-soft: rgba(232, 196, 104, 0.13)
 
-  // Buttons (dark): primary = solid accent, alt = glass panel w/ indigo hover
+  // Buttons (dark): primary = gold to violet gradient, dark text
   --vp-button-brand-bg: $accent
   --vp-button-brand-hover-bg: lighten($accent, 8%)
   --vp-button-brand-active-bg: darken($accent, 8%)
   --vp-button-brand-border: transparent
   --vp-button-brand-hover-border: transparent
   --vp-button-brand-active-border: transparent
-  --vp-button-brand-text: #ffffff
-  --vp-button-brand-hover-text: #ffffff
-  --vp-button-brand-active-text: #ffffff
+  --vp-button-brand-text: $on-accent
+  --vp-button-brand-hover-text: $on-accent
+  --vp-button-brand-active-text: $on-accent
 
-  --vp-button-alt-bg: rgba(255, 255, 255, 0.05)
-  --vp-button-alt-hover-bg: rgba(255, 255, 255, 0.1)
-  --vp-button-alt-active-bg: rgba(255, 255, 255, 0.12)
+  --vp-button-alt-bg: rgba(243, 238, 251, 0.05)
+  --vp-button-alt-hover-bg: rgba(243, 238, 251, 0.1)
+  --vp-button-alt-active-bg: rgba(243, 238, 251, 0.12)
   --vp-button-alt-border: $brd
-  --vp-button-alt-hover-border: rgba(124, 123, 255, 0.5)
-  --vp-button-alt-active-border: rgba(124, 123, 255, 0.6)
-  --vp-button-alt-text: $ink
-  --vp-button-alt-hover-text: $ink
-  --vp-button-alt-active-text: $ink
+  --vp-button-alt-hover-border: rgba(232, 196, 104, 0.5)
+  --vp-button-alt-active-border: rgba(232, 196, 104, 0.6)
+  --vp-button-alt-text: $accent
+  --vp-button-alt-hover-text: $accent
+  --vp-button-alt-active-text: $accent
 }
 
 // Rounded corners for content images inserted via HTML (our converted images)
@@ -142,13 +172,14 @@ html:not(.dark) {
 
 :root {
   --vp-home-hero-name-color: transparent
-  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #7c7bff 30%, #33d6ff)
-  --vp-home-hero-image-background-image: linear-gradient(-45deg, #7c7bff 50%, #33d6ff 50%)
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, $l-accent 30%, $l-grad-end)
+  --vp-home-hero-image-background-image: linear-gradient(-45deg, $l-accent 50%, $l-grad-end 50%)
   --vp-home-hero-image-filter: blur(40px)
 }
 
 .dark {
-  --vp-home-hero-image-background-image: linear-gradient(-45deg, var(--vp-c-brand-darker) 25%, var(--vp-c-brand-darkest) 25%)
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, $accent 30%, $accent2)
+  --vp-home-hero-image-background-image: linear-gradient(-45deg, $accent 50%, $accent2 50%)
 }
 
 @media (min-width 640px) {
@@ -163,20 +194,49 @@ html:not(.dark) {
   }
 }
 
-// Signature indigo→cyan gradient buttons (theme --grad: 135deg, #7c7bff → #33d6ff)
+// Brand gradient buttons (theme --grad: 135deg). Dark uses gold to violet with
+// dark text; light uses the Royal light gradient with white text.
 
-.VPButton.brand,
-.download-button.primary {
+:root {
+  --tsumige-grad: linear-gradient(135deg, $l-accent, $l-grad-end)
+}
+
+.dark {
+  --tsumige-grad: linear-gradient(135deg, $accent, $accent2)
+}
+
+.VPButton.brand {
   border: 0 !important
-  color: #ffffff !important
-  background: linear-gradient(135deg, #7c7bff, #33d6ff) !important
+  color: var(--vp-button-brand-text) !important
+  background: var(--tsumige-grad) !important
   transition: filter 0.25s ease, box-shadow 0.25s ease
 }
 
-.VPButton.brand:hover,
-.download-button.primary:hover {
+.VPButton.brand:hover {
   filter: brightness(1.08)
-  box-shadow: 0 4px 18px rgba(124, 123, 255, 0.45)
+  box-shadow: 0 4px 18px rgba(232, 196, 104, 0.35)
+}
+
+.dark .VPButton.brand {
+  box-shadow: 0 0 22px -2px rgba(232, 196, 104, 0.35)
+}
+
+.VPFeature {
+  background: $l-bg2 !important
+  border: 1px solid $l-brd !important
+}
+
+.dark .VPFeature {
+  background: $bg2 !important
+  border: 1px solid $brd !important
+}
+
+.VPFeature .icon {
+  background: $l-accent-bg !important
+}
+
+.dark .VPFeature .icon {
+  background: #4a3f2d !important
 }
 
 .VPFooter {
@@ -189,31 +249,28 @@ html:not(.dark) {
  * Component: Custom Block
  * -------------------------------------------------------------------------- */
 
-// Custom-block colors from theme-kit indigo.css semantic tokens
-// (tip=accent indigo, warning=gold #ffcf5c, danger=#ff6b6b, info=#2dd4bf) — no muddy browns.
-
 :root {
-  --vp-custom-block-tip-border: $accent
-  --vp-custom-block-tip-text: darken($accent, 12%)
-  --vp-custom-block-tip-bg: rgba(124, 123, 255, 0.1)
+  --vp-custom-block-tip-border: $l-accent
+  --vp-custom-block-tip-text: darken($l-accent, 12%)
+  --vp-custom-block-tip-bg: rgba(95, 69, 204, 0.08)
 
-  --vp-custom-block-warning-border: $warning
-  --vp-custom-block-warning-text: darken($warning, 28%)
-  --vp-custom-block-warning-bg: rgba(255, 207, 92, 0.12)
+  --vp-custom-block-warning-border: #785a00
+  --vp-custom-block-warning-text: #785a00
+  --vp-custom-block-warning-bg: #fee6b6
 
-  --vp-custom-block-danger-border: $danger
-  --vp-custom-block-danger-text: darken($danger, 18%)
-  --vp-custom-block-danger-bg: rgba(255, 107, 107, 0.12)
+  --vp-custom-block-danger-border: #ae2f34
+  --vp-custom-block-danger-text: #ae2f34
+  --vp-custom-block-danger-bg: #ffe1e0
 
-  --vp-custom-block-info-border: $info
-  --vp-custom-block-info-text: darken($info, 22%)
-  --vp-custom-block-info-bg: rgba(45, 212, 191, 0.1)
+  --vp-custom-block-info-border: #6745c7
+  --vp-custom-block-info-text: #6745c7
+  --vp-custom-block-info-bg: #ede4ff
 }
 
 .dark {
   --vp-custom-block-tip-border: $accent
   --vp-custom-block-tip-text: lighten($accent, 14%)
-  --vp-custom-block-tip-bg: rgba(124, 123, 255, 0.12)
+  --vp-custom-block-tip-bg: rgba(232, 196, 104, 0.12)
 
   --vp-custom-block-warning-border: $warning
   --vp-custom-block-warning-text: $warning
@@ -223,9 +280,9 @@ html:not(.dark) {
   --vp-custom-block-danger-text: $danger
   --vp-custom-block-danger-bg: rgba(255, 107, 107, 0.12)
 
-  --vp-custom-block-info-border: $info
-  --vp-custom-block-info-text: $info
-  --vp-custom-block-info-bg: rgba(45, 212, 191, 0.13)
+  --vp-custom-block-info-border: $accent2
+  --vp-custom-block-info-text: $accent2
+  --vp-custom-block-info-bg: rgba(155, 123, 255, 0.13)
 }
 
 .plugin-tabs {
@@ -262,8 +319,6 @@ html:not(.dark) {
 /**
  * Component: Image Figure
  * -------------------------------------------------------------------------- */
-
-// Shitty method to give elevation to image - TO BE REPLACED
 
 main figure {
   margin: 2rem 0
@@ -376,33 +431,4 @@ body {
 
 .VPMenu .CustomSwitchAppearance {
   margin-right: -8px
-}
-
-/**
- * Component: Forks page
- */
-
-.forks .VPFeatures {
-  padding: 2rem 0 !important
-
-  .VPLink:hover {
-    text-decoration: none
-  }
-
-  .title {
-    line-height: 24px
-    font-size: 16px
-    font-weight: 600
-    margin: 0
-    border-top: none
-    padding-top: 0
-    letter-spacing: 0
-    color: var(--vp-c-text-1)
-  }
-}
-
-@media (min-width 640px) {
-  .forks .item.grid-4 {
-    width: 50% !important
-  }
 }

@@ -38,14 +38,12 @@ export function formatChangelog(md: MarkdownIt, body: string | null | undefined,
   const flavored = text
     .replace(/(?<=\(|(, ))@(.*?)(?=\)|(, ))/g, '[@$2](https://github.com/$2)')
     .replace(/([\w-]+)\/([\w-]+)#(\d+)/g, '[$1/$2#$3](https://github.com/$1/$2/issues/$3)')
-    .replace(/#(\d+)/g, '[#$1](https://github.com/Suwayomi/Suwayomi-Tsumiru/issues/$1)')
-    .replace(/\b([0-9a-f]{7,10})\b/gi, '[$1](https://github.com/Suwayomi/Suwayomi-Tsumiru/commit/$1)')
+    .replace(/#(\d+)/g, '[#$1](https://github.com/aaronbamblett/tsumige/issues/$1)')
+    .replace(/\b([0-9a-f]{7,10})\b/gi, '[$1](https://github.com/aaronbamblett/tsumige/commit/$1)')
     .replace(/--- Checksums ---/g, '')
     .replace(/<!-->/g, '')
-    .replace(/https:\/\/github.com\/Suwayomi\/Suwayomi-Tsumiru\/releases\/tag\/(.*)/g, '#$1')
-    .replace('https://github.com/Suwayomi/Suwayomi-Tsumiru/releases', '/changelogs/')
-    // Old release bodies predate the repo handoff; keep their links working.
-    .replace(/https:\/\/github.com\/tsumiru-app\/tsumiru\/releases\/tag\/(.*)/g, '#$1')
+    .replace(/https:\/\/github.com\/aaronbamblett\/tsumige\/releases\/tag\/(.*)/g, '#$1')
+    .replace('https://github.com/aaronbamblett/tsumige/releases', '/changelogs/')
     .trim()
 
   const withCallouts = convertCallouts(md, flavored)

@@ -16,17 +16,6 @@ function generateMeta(context: TransformContext, hostname: string) {
       head.push(['meta', { property, content: String(content) }])
   }
 
-  const addLinkTag = (rel: string, href: string, type?: string, title?: string) => {
-    if (href) {
-      const attributes: { rel: string, href: string, type?: string, title?: string } = { rel, href }
-      if (type)
-        attributes.type = type
-      if (title)
-        attributes.title = title
-      head.push(['link', attributes])
-    }
-  }
-
   head.push(['link', { rel: 'canonical', href: url }])
   addPropertyTag('og:url', url)
   addMetaTag('twitter:url', url)
@@ -41,7 +30,7 @@ function generateMeta(context: TransformContext, hostname: string) {
   if (pageData.frontmatter.customMetaTitle) {
     addPropertyTag('og:title', pageData.frontmatter.customMetaTitle)
     addMetaTag('twitter:title', pageData.frontmatter.customMetaTitle)
-    addPropertyTag('og:site_name', 'Tsumiru')
+    addPropertyTag('og:site_name', 'Tsumige')
   }
   else {
     addPropertyTag('og:title', pageData.frontmatter.title)
@@ -79,11 +68,6 @@ function generateMeta(context: TransformContext, hostname: string) {
 
   if (pageData.lastUpdated && pageData.frontmatter.lastUpdated !== false)
     addPropertyTag('article:modified_time', new Date(pageData.lastUpdated).toISOString())
-
-  if (pageData.filePath === 'news/index.md') {
-    addLinkTag('alternate', `${hostname}/feed.rss`, 'application/rss+xml', 'RSS feed for the news archive')
-    addLinkTag('alternate', `${hostname}/news.json`, 'application/json', 'JSON of the news archive')
-  }
 
   return head
 }
