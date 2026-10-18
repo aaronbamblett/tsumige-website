@@ -7,7 +7,7 @@ title: Adding games
 ## Add a folder or game file
 
 1. Click **Add** in the library toolbar.
-2. Click **Choose folder…** for a game's folder, or **Choose game file…** for its executable. You can also drop a single game folder or file onto the library window.
+2. Click **Choose folder…** for a game's folder, or **Choose game file…** for its game file. You can also drop a single game folder or file onto the library window.
 3. Check **Game file**. If several files were found, choose the one that starts the game.
 4. Check the suggested match. Use **Search VNDB** to search by title or paste a VNDB link or ID. Select a result and click **Next**.
 5. Check **Title**, **Game file** and **Mode**, then click **Add**.

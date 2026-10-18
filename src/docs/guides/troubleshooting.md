@@ -6,7 +6,7 @@ title: Troubleshooting
 
 ## A game will not start
 
-1. Select the game and open **Launch**. Check **Mode** and **Game file**. Use **Choose…** if the executable moved.
+1. Select the game and open **Launch**. Check **Mode** and **Game file**. Use **Choose…** if the game file moved.
 2. For **Steam**, check **Steam app id**. For **Proton** on Linux, `umu-run` must be available on `PATH`.
 3. For **Proton** or **Wine**, check **Prefix**, **Game language** and the selected runner. Click **Rescan** if you installed a runner after opening Tsumige.
 4. Click **Play** again and read the error. If the game exits immediately with an error, Tsumige shows its launch log location.
