@@ -18,9 +18,11 @@ On a wide window, the logo, search, sort, **All** / **Favourites**, **Filter**, 
 
 Active filters show as chips above the grid, each with ×, followed by **Clear all**. Examples are **Hide adult**, a tag and **Developer: X**. Clicking a developer's name in the Info tab filters by that developer.
 
+English text uses the bundled Inter. Other scripts use the system's fonts.
+
 ## The game menu
 
-Open the game menu (⋮) on a tile for **Edit…**, **Change art…**, **Open on VNDB** and **Remove from library…**. **Edit…** changes **Title**, **Original title**, **Developers** and **Release date**. **Remove from library…** removes the game from Tsumige only. Its files stay where they are.
+Open the game menu (⋮) on a tile for **Edit…**, **Change art…**, **Open on VNDB** and **Remove from library…**. **Edit…** changes **Title**, **Original title**, **Developers** and **Release date**. **Release date** takes YYYY-MM-DD, YYYY-MM or YYYY. Edited fields are kept when VNDB data is refreshed. **Use VNDB value** puts VNDB's value back. **Remove from library…** removes the game from Tsumige only. Its files stay where they are.
 
 ## Guides
 
