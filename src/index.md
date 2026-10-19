@@ -1,13 +1,13 @@
 ---
 title: "Tsumige: visual novel library and launcher"
 titleTemplate: false
-description: Add a game and Tsumige downloads its cover art, description, tags and rating from VNDB. Then it launches the game with the right settings and logs your playtime.
+description: "Tsumige is an open source library and launcher for your visual novels, with one goal: every VN you own in one place."
 layout: home
 
 hero:
   name: Tsumige
   text: A good-looking library for your visual novels
-  tagline: Add a game and Tsumige downloads its cover art, description, tags and rating from VNDB. Then it launches the game with the right settings and logs your playtime.
+  tagline: "Tsumige is an open source library and launcher for your visual novels, with one goal: every VN you own in one place."
   actions:
     - theme: brand
       text: Get started

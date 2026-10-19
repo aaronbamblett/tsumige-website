@@ -22,7 +22,7 @@ const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN })
 const releaseDateCache = new Map<string, string>()
 
 const title = 'Tsumige'
-const description = 'Add a game and Tsumige downloads its cover art, description, tags and rating from VNDB. Then it launches the game with the right settings and logs your playtime.'
+const description = 'Tsumige is an open source library and launcher for your visual novels, with one goal: every VN you own in one place.'
 
 const env = loadEnv('', process.cwd())
 const hostname: string = env.VITE_HOSTNAME || 'http://localhost:4173'
