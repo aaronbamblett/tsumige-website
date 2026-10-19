@@ -22,7 +22,7 @@ English text uses the bundled Inter. Other scripts use the system's fonts.
 
 ## The game menu
 
-Open the game menu (⋮) on a tile for **Edit…**, **Change art…**, **Open on VNDB** and **Remove from library…**. **Edit…** changes **Title**, **Original title**, **Developers** and **Release date**. **Release date** takes YYYY-MM-DD, YYYY-MM or YYYY. Edited fields are kept when VNDB data is refreshed. **Use VNDB value** puts VNDB's value back. **Remove from library…** removes the game from Tsumige only. Its files stay where they are.
+Select a game and open the menu (⋮) at the top of its details pane for **Edit…**, **Change art…**, **Open on VNDB** and **Remove from library…**. **Edit…** changes **Title**, **Original title**, **Developers** and **Release date**. **Release date** takes YYYY-MM-DD, YYYY-MM or YYYY. Edited fields are kept when VNDB data is refreshed. **Use VNDB value** puts VNDB's value back. **Remove from library…** removes the game from Tsumige only. Its files stay where they are.
 
 ## Guides
 

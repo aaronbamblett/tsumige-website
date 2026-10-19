@@ -20,8 +20,8 @@ Tsumige suggests a group only when VNDB links the titles, through a shared entry
 1. Ctrl+click or Shift+click several tiles to select them.
 2. Click **Group…**.
 
-Adding a game to an open group works the same way: with the group open, select the game and the group, then click **Group…**.
+To add a game to a group, open the group, Ctrl+click the game, then click **Group…**.
 
 ## Rename and ungroup
 
-Open the game menu (⋮) on a group tile. **Rename group…** changes its name. **Ungroup** returns it to separate tiles.
+Select the group and open the menu (⋮) at the top of its details pane. **Rename group…** changes its name. **Ungroup** returns it to separate tiles.

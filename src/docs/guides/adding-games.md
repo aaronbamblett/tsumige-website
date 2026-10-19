@@ -20,7 +20,7 @@ Dropping or choosing a folder that holds several games opens the import list ins
 
 1. Click **Add**, then the **Steam games** card (Installed on this computer). It lists the games Steam has installed on this computer, on Linux, macOS and Windows.
 2. Each row shows the Steam name, with its VNDB match underneath. Matches made by Steam store link are ticked. A match found only by title shows **Best match** and stays unticked.
-3. Tick the games you want to add. Added games launch through Steam.
+3. Tick the games you want and click **Add games**. They launch through Steam.
 
 ## Duplicates
 
