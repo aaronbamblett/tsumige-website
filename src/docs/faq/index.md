@@ -18,7 +18,13 @@ The data folder is:
 
 ## Do I need a VNDB match?
 
-No. Game data and covers come from VNDB, but **Add without VNDB** lets you enter a title and launch file yourself. You can choose a local image with **From file…** in **Change art…**.
+No. Game data and covers come from VNDB, but **Add without VNDB** lets you enter a title and launch file yourself. You can choose a local image with **Choose file…** in **Change art…**.
+
+## Why didn't a game get matched?
+
+In the import list, use **Choose…** on a row with **No matches on VNDB**, or **Change…** on a row with **Best match**. Search by title, VNDB link or ID.
+
+Some games are not on VNDB at all. GNOSIA is one example. Add the game under its own name, then use **Edit…** in the game menu to set its **Title**, **Developers** and **Release date**.
 
 ## Can I use Wine or Proton on macOS or Windows?
 
@@ -30,4 +36,4 @@ Steam playtime is not tracked on macOS. On other platforms, recording depends on
 
 ## Can I add several games at once?
 
-Use **Import a folder** from **Add**. Review the matches and game file paths before clicking **Add Games**. See [Folder import](/docs/guides/folder-import).
+Use the **Import folder** card from **Add**. Review the matches and folder names before clicking **Add games**. See [Folder import](/docs/guides/folder-import).

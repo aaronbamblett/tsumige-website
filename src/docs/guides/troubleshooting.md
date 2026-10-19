@@ -17,9 +17,9 @@ Launch logs are in `logs` inside the [data folder](/docs/faq/#where-is-my-librar
 
 Game data and covers come from VNDB.
 
-1. In the add dialog, change **Search VNDB** to the title, a VNDB link or an ID.
-2. Select the correct result and click **Next**. If a search fails, click **Retry**.
-3. If there is no match, use **Add without VNDB** and enter the title yourself.
+1. In the add dialog, type a title, a VNDB link or an ID into the search box.
+2. In the import list, use **Change…** on a **Best match** row or **Choose…** on a **No matches on VNDB** row. If a lookup fails with **VNDB search failed**, click **Try again**.
+3. If the game is not on VNDB, add it under its own name and set its details with **Edit…**. See [FAQ](/docs/faq/).
 
 ## A file is rejected by Flatpak
 
@@ -27,4 +27,4 @@ If Tsumige says a path came through the Flatpak portal, choose the file or folde
 
 ## A cover is missing
 
-The game can still be added if its cover download fails. Select it and use **More**, then **Change art…**. See [Cover art](/docs/guides/cover-art).
+The game can still be added if its cover download fails. Select it and use the game menu (⋮), then **Change art…**. See [Cover art](/docs/guides/cover-art).

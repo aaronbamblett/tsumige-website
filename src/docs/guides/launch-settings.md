@@ -22,4 +22,4 @@ Text fields save when you press Enter or move focus away. Mode and dropdown choi
 
 These two fields are available outside **Steam** mode.
 
-For an installer or patch on Linux, click **Run .exe inside prefix…** and select its executable. This uses the game's **Proton** or **Wine** settings and does not add playtime.
+For an installer or patch, use **Run EXE inside prefix…** in the **Launch** tab, under the prefix setting. Select its executable. This runs it in a Proton or Wine game's prefix with the game's settings and does not add playtime.

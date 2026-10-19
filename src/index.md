@@ -18,12 +18,12 @@ hero:
 
 features:
   - title: Cover art, automatically
-    details: Covers and backgrounds come from VNDB. Swap in another from the release packages or screenshots, or use your own.
+    details: Covers come from VNDB packages and SteamGridDB, or use your own image. Covers are 2:3.
     icon: <svg height="24" width="24" viewBox="0 -960 960 960" fill="var(--vp-c-brand-1)" xmlns="http://www.w3.org/2000/svg"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0 0v-560 560Zm80-80h400q12 0 18-11t-2-21L586-459q-6-8-16-8t-16 8L450-320l-74-99q-6-8-16-8t-16 8l-80 107q-8 10-2 21t18 11Z"/></svg>
     link: /docs/guides/cover-art
     linkText: Cover art
   - title: Metadata from VNDB
-    details: Description, developer, release date, length, rating and tags fill in when you add a game. Import a folder and every game is matched.
+    details: Description, developer, release date, length, rating and tags fill in when you add a game. Pick from your installed Steam games, import a folder, and group episodes into one tile. Edit… fixes a wrong title and keeps it.
     icon: <svg height="24" width="24" viewBox="0 -960 960 960" fill="var(--vp-c-brand-1)" xmlns="http://www.w3.org/2000/svg"><path d="M508.5-291.5Q520-303 520-320v-160q0-17-11.5-28.5T480-520q-17 0-28.5 11.5T440-480v160q0 17 11.5 28.5T480-280q17 0 28.5-11.5Zm0-320Q520-623 520-640t-11.5-28.5Q497-680 480-680t-28.5 11.5Q440-657 440-640t11.5 28.5Q463-600 480-600t28.5-11.5ZM480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
     link: /docs/guides/adding-games
     linkText: Adding games

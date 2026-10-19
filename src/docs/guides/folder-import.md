@@ -4,14 +4,18 @@ title: Folder import
 
 # Folder import
 
-1. Click **Add**, then **Import a folder**. Select the folder containing your games.
-2. Wait for the scan and lookups. Game data and covers come from VNDB.
-3. Review each row's title and game file path. Click a title to change its match: search by title or paste a VNDB link or ID, choose a result and click **Select**.
-4. Tick the games you want to add. Matched games with a detected game file are ticked automatically. Untick anything you do not want.
-5. Click **Add Games**. Nothing is added before this step.
+1. Click **Add**, then the **Import folder** card. Click **Choose folder…** and select the folder containing your games.
+2. **Checking folder…** shows while Tsumige looks. If the folder you choose directly contains a launchable game file, the importer treats that folder as one game. To add a game by choosing its file yourself, use [Adding games](/docs/guides/adding-games).
+3. Wait for matching. Each row shows the game folder's name, with its VNDB match underneath. A progress bar reads "Matching on VNDB… N of M" and counts only games not already in the library.
+4. Review each row:
+   - A spinner shows while a row waits for its match.
+   - **No matches on VNDB** with **Choose…**: search by title, VNDB link or ID, choose a result and click **Select**.
+   - **Best match** with **Change…**: the match was found by title only, so check it and change it if it is wrong.
+   - **VNDB search failed** with **Try again**: the lookup failed, so retry it.
+   - **Same VNDB entry as X**: another row matched the same entry. The row stays unticked but can still be added, for chapter releases or another version.
+5. Tick the games you want to add. Matched games are ticked automatically. Untick anything you do not want.
+6. Click **Add games**. Nothing is added before this step.
 
-**Browse…** replaces the scan with another folder. **Scan Folder…** adds another folder to the list. Turn off **Hide imported** to see games already in the library.
+**Choose folder…** replaces the list with another folder. **Add folder…** adds another folder to the list. **Hide imported** in the list header hides games already in the library.
 
-A row needs a detected game file before it can be selected. An unmatched row can be ticked and added using its folder name. Games already in the library are excluded by game file path or VNDB ID; duplicate selections are excluded too.
-
-If the folder you choose directly contains a launchable game file, the importer treats that folder as one game. To add a game by choosing its file yourself, use [Adding games](/docs/guides/adding-games).
+An unmatched row can be ticked and added using its folder name. The same game can't be added twice through a different path or `.exe`. Paths through symlinks such as `/mnt` and `/var/mnt` on Bazzite and Fedora Atomic count as the same.
