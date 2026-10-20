@@ -1,3 +1,4 @@
+import type { Buffer } from 'node:buffer'
 import type { ContentData, SiteConfig } from 'vitepress'
 import type { SatoriOptions } from 'x-satori/vue'
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
@@ -11,10 +12,19 @@ import { satoriVue } from 'x-satori/vue'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const __fonts = resolve(__dirname, '../../fonts')
+const __images = resolve(__dirname, '../../og-assets')
+
+function toDataUri(data: Buffer, mediaType: string): string {
+  return `data:${mediaType};base64,${data.toString('base64')}`
+}
 
 async function generateOgImages(config: SiteConfig) {
   const pages = await createContentLoader('**/*.md', { excerpt: true }).load()
   const template = await readFile(resolve(__dirname, '../../theme/components/OgImageTemplate.vue'), 'utf-8')
+
+  // Satori needs data URIs (or absolute URLs) for <img>; read once per build.
+  const logo = toDataUri(await readFile(resolve(__images, 'logo.png')), 'image/png')
+  const shot = toDataUri(await readFile(resolve(__images, 'hero-library-860.jpg')), 'image/jpeg')
 
   const fonts: SatoriOptions['fonts'] = [
     {
@@ -54,6 +64,9 @@ async function generateOgImages(config: SiteConfig) {
       template,
       outDir: config.outDir,
       fonts,
+      logo,
+
+      shot,
     })
   }
 
@@ -139,6 +152,9 @@ async function generateOgImages(config: SiteConfig) {
       template,
       outDir: config.outDir,
       fonts,
+      logo,
+
+      shot,
     })
   }
 }
@@ -150,6 +166,9 @@ interface GenerateImagesOptions {
   template: string
   outDir: string
   fonts: SatoriOptions['fonts']
+  logo: string
+
+  shot: string
 }
 
 function getDir(url: string) {
@@ -163,8 +182,9 @@ function getDir(url: string) {
   return undefined
 }
 
-async function generateImage({ page, template, outDir, fonts }: GenerateImagesOptions) {
+async function generateImage({ page, template, outDir, fonts, logo, shot }: GenerateImagesOptions) {
   const { frontmatter, url } = page
+  const isHome = frontmatter.layout === 'home'
 
   const options: SatoriOptions = {
     width: 1200,
@@ -172,14 +192,18 @@ async function generateImage({ page, template, outDir, fonts }: GenerateImagesOp
     fonts,
     props: {
       title:
-                frontmatter.layout === 'home'
+                isHome
                   ? frontmatter.hero.name ?? frontmatter.title
                   : frontmatter.customMetaTitle ?? frontmatter.title,
       description:
-                frontmatter.layout === 'home'
-                  ? frontmatter.hero.tagline ?? frontmatter.description
+                isHome
+                  ? frontmatter.hero.text ?? frontmatter.description
                   : frontmatter.description,
       dir: getDir(url),
+      home: isHome,
+      logo,
+
+      shot: isHome ? shot : undefined,
     },
   }
 
