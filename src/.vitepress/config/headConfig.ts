@@ -12,7 +12,7 @@ const headConfig: HeadConfig[] = [
   ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' }],
   ['meta', { name: 'twitter:card', content: 'summary' }],
   ['meta', { property: 'og:site_name', content: 'Tsumige' }],
-  ['meta', { property: 'og:description', content: 'Add a game and Tsumige downloads its cover art, description, tags and rating from VNDB. Then it launches the game with the right settings and logs your playtime.' }],
+  ['meta', { property: 'og:description', content: 'Tsumige is an open source library and launcher for your visual novels, with one goal: every VN you own in one place.' }],
   ['meta', { property: 'og:locale', content: 'en_US' }],
   ['meta', { property: 'og:type', content: 'website' }],
 ]

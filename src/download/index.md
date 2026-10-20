@@ -29,7 +29,7 @@ flatpak install tsumige app.tsumige.Tsumige
 ## macOS
 
 1. Download the zip file from the [releases page](https://github.com/aaronbamblett/tsumige/releases) and unzip it.
-2. The app is unsigned, so the first time, right-click it and choose **Open**.
+2. The app isn't signed with an Apple Developer ID, so on first launch right-click Tsumige.app and choose **Open**.
 
 ## Windows
 

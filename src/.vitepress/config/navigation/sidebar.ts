@@ -36,6 +36,10 @@ function defaultSidebar(): DefaultTheme.SidebarItem[] {
           link: '/docs/guides/folder-import',
         },
         {
+          text: 'Episode groups',
+          link: '/docs/guides/episode-groups',
+        },
+        {
           text: 'Launch settings',
           link: '/docs/guides/launch-settings',
         },
