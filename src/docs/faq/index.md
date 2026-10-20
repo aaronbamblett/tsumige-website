@@ -1,6 +1,6 @@
 ---
 title: FAQ
-description: "Find your library's data folder and answers to common questions about matches, platforms and imports."
+description: "Answers to common questions about Tsumige: where your library lives, matches, platforms and imports."
 ---
 
 # FAQ
