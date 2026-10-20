@@ -1,5 +1,6 @@
 ---
 title: FAQ
+description: "Answers to common questions about Tsumige: where your library lives, matches, platforms and imports."
 ---
 
 # FAQ

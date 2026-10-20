@@ -1,5 +1,6 @@
 ---
 title: Launch settings
+description: "Set how a game launches in Tsumige: mode, game file, runner, language, arguments and environment."
 ---
 
 # Launch settings

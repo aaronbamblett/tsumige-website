@@ -1,5 +1,6 @@
 ---
 title: Episode groups
+description: "Group a series' chapters or episodes into one Tsumige tile, by hand or from suggestions."
 ---
 
 # Episode groups

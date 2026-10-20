@@ -1,5 +1,6 @@
 ---
 title: Getting started
+description: "Add your first game to Tsumige, find it in the library and start playing."
 ---
 
 # Getting started

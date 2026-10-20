@@ -1,5 +1,6 @@
 ---
 title: Cover art
+description: "Choose a cover or background for a game in Tsumige, from VNDB, SteamGridDB or your own image."
 ---
 
 # Cover art

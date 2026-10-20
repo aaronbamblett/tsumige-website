@@ -1,5 +1,6 @@
 ---
 title: Troubleshooting
+description: "Check launch errors, wrong VNDB matches, rejected Flatpak paths and missing covers in Tsumige."
 ---
 
 # Troubleshooting

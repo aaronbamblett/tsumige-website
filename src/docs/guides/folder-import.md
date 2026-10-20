@@ -1,5 +1,6 @@
 ---
 title: Folder import
+description: "Review matches and add several games from a folder to your Tsumige library at once."
 ---
 
 # Folder import
