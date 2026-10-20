@@ -1,5 +1,6 @@
 ---
 title: Playtime
+description: "Start games through Tsumige and read their playtime totals and session history."
 ---
 
 # Playtime

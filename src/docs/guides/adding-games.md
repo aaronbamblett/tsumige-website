@@ -1,5 +1,6 @@
 ---
 title: Adding games
+description: "Add a game, a folder of games or a Steam game to your Tsumige library."
 ---
 
 # Adding games
