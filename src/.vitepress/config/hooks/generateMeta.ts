@@ -69,6 +69,28 @@ function generateMeta(context: TransformContext, hostname: string) {
   if (pageData.lastUpdated && pageData.frontmatter.lastUpdated !== false)
     addPropertyTag('article:modified_time', new Date(pageData.lastUpdated).toISOString())
 
+  if (pageData.relativePath === 'index.md') {
+    const graph = {
+      '@context': 'https://schema.org',
+      '@graph': [
+        { '@type': 'WebSite', 'name': 'Tsumige', 'url': `${hostname}/` },
+        {
+          '@type': 'SoftwareApplication',
+          'name': 'Tsumige',
+          'url': `${hostname}/`,
+          'description': pageData.frontmatter.description,
+          'applicationCategory': 'GameApplication',
+          'operatingSystem': 'Windows, macOS, Linux',
+          'offers': { '@type': 'Offer', 'price': '0', 'priceCurrency': 'USD' },
+          'downloadUrl': `${hostname}/download/`,
+          'image': `${hostname}/android-chrome-512x512.png`,
+          'sameAs': ['https://github.com/aaronbamblett/tsumige'],
+        },
+      ],
+    }
+    head.push(['script', { type: 'application/ld+json' }, JSON.stringify(graph)])
+  }
+
   return head
 }
 
